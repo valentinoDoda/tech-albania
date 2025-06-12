@@ -6,53 +6,149 @@
     <title>Website Tech Albania</title>
     <link rel="stylesheet" href="index.css" />
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins&family=Sora&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-      <header>
-        <nav>
-          <div class="logo">
-            <p>Website Tech Albania</p>
+    <header>
+      <nav>
+        <div class="logo">
+          <p>Website Tech Albania</p>
+        </div>
+        <div class="hamburge-btn">
+          <button id="toggleMenu">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">about</a></li>
+            <li><a href="#">services</a></li>
+            <li><a href="#">projects</a></li>
+            <li><a href="#">contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-presentasion">
+          <h1>
+            Zhvillimi i Pranisë <span> Digjitale </span> me
+            <span>Qëllim</span> dhe Shpeteshi
+          </h1>
+          <p>
+            Te Website Tech Albania, ne kombinojmë të menduarit strategjik me
+            një ekzekutim të shpejtë dhe cilësor. Nga faqet e personalizuara
+            deri te përvojat mbresëlënëse të përdoruesve.
+          </p>
+        </div>
+        <div class="hero-ctas">
+          <a href="#">projektet tona </a>
+          <a href="#">na kontaktoni </a>
+        </div>
+        <div class="hero_benefits">
+          <p><span>10</span>+ vite përvojë</p>
+          <p><span>20</span>+projekte</p>
+        </div>
+      </div>
+      <div class="hero-image">
+        <picture>
+          <source srcset="images/Group-10-1.png" media="(max-width: 440px)" />
+          <source srcset="images/image-15.png" media="(max-width: 800px)" />
+          <img src="images/Group-10-1.png" alt="" />
+        </picture>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="about_container">
+        <h2>Reeth Nesh</h2>
+        <h3>Njihuni me ekipin tonë</h3>
+
+        <div class="member_card">
+          <div class="member_info">
+            <div class="member_image">
+              <img src="" alt="" srcset="" />
+            </div>
+            <div class="member_role">
+              <p>Roland</p>
+              <p>CEO/ Founder of company</p>
+            </div>
           </div>
-          <div class="menu">
-            <ul>
-              <li><a href="#">home</a></li>
-              <li><a href="#">about</a></li>
-              <li><a href="#">services</a></li>
-              <li><a href="#">projects</a></li>
-              <li><a href="#">contact</a></li>
-            </ul>
-          </div>
-        </nav>
-      </header>
-      <section class="hero">
-        <div class="hero-content">
-          <div class="hero-presentasion">
-            <h1>Zhvillimi i Pranisë Digjitale me Qëllim dhe Ritëm</h1>
-            <p>
-              Te Website Tech Albania, ne kombinojmë të menduarit strategjik me
-              një ekzekutim të shpejtë dhe cilësor. Nga faqet e personalizuara
-              deri te përvojat mbresëlënëse të përdoruesve.
-            </p>
-          </div>
-          <div class="hero-ctas">
-            <a href="#">projektet tona </a>
-            <a href="#">na kontaktoni </a>
-          </div>
-          <div class="hero_benefits">
-            <p><span>10</span>+ vite përvojë</p>
-            <p><span>20</span>projekte</p>
+          <div class="member_skills">
+            <p>Nuxt.js</p>
+            <p>Tailwind CSS</p>
+            <p>Vue.js</p>
+            <p>JavaScript</p>
+            <p>TypeScript</p>
           </div>
         </div>
-        <div class="hero-image">
-          <picture>
-             <source srcset="images/image-15.png" media="(max-width: 800px)">
-            <img src="images/Group-10-1.png" alt="" />
-          </picture>
+
+        <div class="member_card">
+          <div class="member_info">
+            <div class="member_image">
+              <img src="" alt="" srcset="" />
+            </div>
+            <div class="member_role">
+              <p>Mariglen</p>
+              <p>UX/UI Designer</p>
+            </div>
+          </div>
+          <div class="member_skills">
+            <p>UX/UI</p>
+            <p>Webflow</p>
+            <p>Vue.js</p>
+            <p>JavaScript</p>
+            <p>Figma</p>
+          </div>
         </div>
-      </section>
-    </div>
+
+        <div class="member_card">
+          <div class="member_info">
+            <div class="member_image">
+              <img src="" alt="" srcset="" />
+            </div>
+            <div class="member_role">
+              <p>Fatjon</p>
+              <p>UX/UI Designer</p>
+            </div>
+          </div>
+          <div class="member_skills">
+            <p>UX/UI</p>
+            <p>Webflow</p>
+            <p>Auto-layout</p>
+            <p>Design System</p>
+            <p>Figma</p>
+          </div>
+        </div>
+
+        <div class="member_card">
+          <div class="member_info">
+            <div class="member_image">
+              <img src="" alt="" srcset="" />
+            </div>
+            <div class="member_role">
+              <p>Valentin</p>
+              <p>Front-end developer</p>
+            </div>
+          </div>
+          <div class="member_skills">
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>Vue.js</p>
+            <p>JavaScript</p>
+            <p>Figma</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="index.js"></script>
   </body>
 </html>

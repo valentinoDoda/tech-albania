@@ -11,8 +11,14 @@
   --title-color: white;
   --paragraph-color: #e5e5e5;
 
+  --primary-btn-bg: #fcd34d;
+  --primary-btn-bg-hover: rgb(83, 42, 117);
   /* sizes */
   --h1-size: 2.625rem;
+}
+button {
+  border: none;
+  background: none;
 }
 * {
   padding: 0;
@@ -41,18 +47,42 @@ a {
 
 body > * {
   padding: 0 1rem;
-  margin: auto;
+  margin: 7rem auto 0 auto;
   max-width: 1285px;
 }
-
+.active {
+  display: block !important;
+}
+header {
+  z-index: 1;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color: var(--main-bg);
+}
 nav {
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1.5rem;
   padding: 1rem 0;
   align-items: baseline;
   justify-content: space-between;
 }
 
-.logo {
+.hamburge-btn {
+  display: none;
+}
+.hamburge-btn button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--logo-color);
+}
+
+.logo p {
   font-family: var(--logo-font);
   font-size: 1.5rem;
   font-weight: bold;
@@ -60,8 +90,8 @@ nav {
 }
 
 .menu ul {
+  gap: 0.5rem;
   display: flex;
-
   list-style-type: none;
 }
 a {
@@ -78,18 +108,18 @@ a {
 .menu ul li:last-child a {
   margin-left: 1.5rem;
   color: var(--main-bg);
-  background-color: #e5e5e5;
+  background-color: var(--primary-btn-bg);
 }
 .menu ul li:last-child a:hover {
-  color: #e5e5e5;
+  color: var(--primary-btn-bg);
+  background-color: var(--primary-btn-bg-hover);
 }
 .menu ul li a:hover {
-  transition: background 0.3s;
-  border-radius: 8px;
-  background-color: #585581;
+  transition: all 0.3s;
+  color: var(--main-bg);
+  background-color: white;
 }
 .hero {
-  margin-top: 4rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
@@ -101,6 +131,7 @@ a {
   height: 400px;
 }
 .hero picture img {
+  animation: fade-in 0.8s ease-in-out;
   object-fit: contain;
   height: 100%;
   width: 100%;
@@ -115,12 +146,18 @@ a {
   gap: 1.5rem;
 }
 
+.hero-presentasion h1 span {
+  color: var(--primary-btn-bg);
+}
 .hero-presentasion h1 {
+  animation: slide-in 0.7s ease-in;
   line-height: 130%;
   font-size: var(--h1-size);
 }
 
 .hero-presentasion p {
+  animation: slide-in 0.8s ease-in;
+
   font-size: 1.313rem;
 }
 
@@ -135,11 +172,25 @@ a {
   border-radius: 8px;
 }
 .hero-ctas :first-child {
+  animation: fade-in 0.7s linear 0.1s both;
   border: 1px solid white;
 }
-.hero-ctas :last-child {
-  background-color: #f2f4fb;
+
+.hero-ctas :first-child:hover {
+  transition: all 0.3s;
   color: var(--main-bg);
+  background-color: white;
+}
+.hero-ctas :last-child {
+  animation: fade-in 0.9s linear 0.1s both;
+  transition: background 0.3s;
+  background-color: var(--primary-btn-bg);
+  color: #1c1b2d;
+}
+
+.hero-ctas :last-child:hover {
+  color: var(--primary-btn-bg);
+  background-color: var(--primary-btn-bg-hover);
 }
 
 .hero_benefits {
@@ -149,21 +200,92 @@ a {
   display: flex;
   gap: 0.5rem;
 }
+
+.about {
+  max-width: 100%;
+  background-color: #26243a;
+}
+.about_container {
+  max-width: 1285px;
+  margin: auto;
+  padding: 4rem 0;
+}
+.about_container h2 {
+  text-align: center;
+  font-size: 2.625rem;
+}
+.about_container h3 {
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 1rem;
+  color: var(--paragraph-color);
+}
+/* key frames */
+
+@keyframes fade-in {
+  from {
+    scale: 0.1;
+    opacity: 0;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+/* media */
 @media (max-width: 1260px) {
   html {
     font-size: 14px;
   }
+}
+
+@media (max-width: 700px) {
+  .hamburge-btn {
+    display: block;
+  }
+  .menu {
+    display: none;
+    grid-column: 1/3;
+  }
+  .menu ul li a {
+    font-size: 1.2rem;
+  }
+  .menu ul {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    background-color: var(--main-bg);
+    flex-direction: column;
+  }
+  .menu ul li:last-child a {
+    margin-left: 0;
+  }
+}
 @media (max-width: 800px) {
-  .hero{
+  .hero {
     grid-template-columns: 3fr 1fr;
   }
+}
 @media (max-width: 500px) {
-  html{
+  html {
     font-size: 12px;
   }
+}
 @media (max-width: 440px) {
-  html{
-    font-size: 12px;
+  .hero {
+    grid-template-columns: 1fr;
   }
-
+  .hero-image {
+    grid-row: 1;
+    height: 150px;
+  }
 }
