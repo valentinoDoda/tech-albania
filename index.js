@@ -14,6 +14,9 @@ const elementsToAnimate = document.querySelectorAll(`
   .about_container .meeting_team h3,
   .about_container .purpose h3,
   .member_card,
+  .services h2,
+  .services a,
+  .service,
   .our_purpose p,
   .our_purpose h1
 `);
@@ -42,3 +45,4 @@ viewMore.forEach((btn) => {
     btnParentElement.children[0].classList.toggle("truncate-3-lines");
   });
 });
+
