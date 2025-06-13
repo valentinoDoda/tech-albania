@@ -11,8 +11,11 @@ const elementsToAnimate = document.querySelectorAll(`
   .hero-presentasion p,
   .hero-ctas > *,
   .about_container h2,
-  .about_container h3,
-  .member_card
+  .about_container .meeting_team h3,
+  .about_container .purpose h3,
+  .member_card,
+  .our_purpose p,
+  .our_purpose h1
 `);
 
 const observer = new IntersectionObserver(
