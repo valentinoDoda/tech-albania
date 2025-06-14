@@ -541,3 +541,100 @@ a {
   }
 }
 
+
+.process{
+  overflow: visible;
+}
+
+.process_step{
+  
+  display: grid;
+  grid-template-columns:1fr auto 1fr;
+  justify-items: center;
+}
+
+.bar{
+position: relative;
+ width: 2.5rem;
+ margin: 0 10px;
+ height: 100vh;
+background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77, .3) 25%,rgba(252, 211, 77, .6) 40%,  rgba(252, 211, 77, .7) 50%,rgba(252, 211, 77, .6) 60%,rgba(252, 211, 77, .3) 75%, rgba(255, 255, 255, 0) 100%);
+}
+.bar:hover::after{
+  background-color: var(--primary-btn-bg);
+ 
+}
+
+.bar::after{
+  font-family: var(--logo-font);
+  box-shadow: 0px 0px 12px var(--main-bg);
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ad9242;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 10px;
+    font-size: 2rem;
+    content: "1";
+    text-align: center;
+    border-radius: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.process_step:first-child .bar::after{
+  
+  content: "1";
+  
+
+}
+.process_step:nth-child(2) .bar::after{
+
+  content: "2";
+  
+
+}
+
+.process_step:nth-child(3) .bar::after{
+  
+  content: "3";
+
+}
+
+.process_step:nth-child(2n) .title{
+  order: 3;
+}
+.process_step:nth-child(2n) .bar{
+  order: 2;
+}
+.process_step:nth-child(2n) .description{
+  order: 1;
+}
+
+.process_step:last-child .bar::after{
+  content: "4";
+}
+.process_step:last-child{
+  margin-bottom: 150px;
+}
+.process_step:last-child .bar{
+ height: calc(100% + 100px);
+}
+
+
+
+.title{
+  padding:0 2.5rem;
+  margin-top: -2.8rem;
+}
+.title h3{
+  font-size: 1.5rem;
+}
+.description{
+  padding: 0.5rem 2.5rem;
+}
+.description p{
+  font-size: 1.2rem ;
+}
