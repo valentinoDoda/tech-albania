@@ -6,6 +6,39 @@ toggleMenu.addEventListener("click", (e) => {
   menu[0].classList.toggle("active");
 });
 
+const numValues = document.querySelectorAll(".value");
+
+const duration = 700
+
+const observer2 = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const endPoint = +entry.target.textContent;
+        let startPoint = 0;
+        const calcTime = duration / endPoint;
+        const counter = setInterval(()=> {
+        startPoint++;
+        entry.target.textContent = startPoint;
+        if(startPoint == endPoint){
+          clearInterval(counter)
+         }
+          }, calcTime)
+      } else {
+        console.log(entry.target.textContent)
+      }
+    });
+  },
+  {
+    threshold: 0.5,
+  }
+);
+numValues.forEach((num) => {
+  observer2.observe(num)
+  
+})
+
+
 const elementsToAnimate = document.querySelectorAll(`
   .hero-presentasion h1,
   .hero-presentasion p,
@@ -48,4 +81,3 @@ viewMore.forEach((btn) => {
     btnParentElement.children[0].classList.toggle("truncate-3-lines");
   });
 });
-
