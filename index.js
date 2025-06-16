@@ -18,7 +18,10 @@ const elementsToAnimate = document.querySelectorAll(`
   .services a,
   .service,
   .our_purpose p,
-  .our_purpose h1
+  .our_purpose h1,
+  .process h2,
+  .process_step .description,
+  .process_step .title
 `);
 
 const observer = new IntersectionObserver(
