@@ -663,6 +663,8 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77,
 
 .project_container button{
   opacity: 0.8;
+
+  text-decoration: underline;
   color: var(--paragraph-color);
   font-size: 1rem;
   cursor: pointer;
@@ -684,8 +686,8 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
 
 .project_btns{
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
 }
 .project_container a{
   border-radius: 8px;
@@ -763,6 +765,9 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
   .section_cta{
         padding: 6rem 1rem;
   }
+  .all_projects{
+    grid-template-columns: repeat(2 , 1fr);
+  }
   .hero {
     grid-template-columns: 3fr 1fr;
   }
@@ -787,26 +792,7 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
   .menu ul li:last-child a {
     margin-left: 0;
   }
-}
-@media (max-width: 615px) {
-   .hero {
-    grid-template-columns: 1fr;
-  }
-  .hero-image {
-    grid-row: 1;
-    height: 150px;
-  }
-  .process_step > * {
-  order: 0 !important;
-}
-  .process_step{
-  grid-template-columns:auto 1fr !important;
-  justify-items: start !important;
-}
-.process_step .description{
-  padding-bottom: 100%;
-}
-.process_step:last-child .description{
+  .process_step:last-child .description{
   padding-bottom: 100px;
 }
 .process_step .bar{
@@ -816,6 +802,33 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
   grid-row: 1 / span 2;
  
 }
+    .process_step > * {
+  order: 0 !important;
+}
+  .process_step{
+  grid-template-columns:auto 1fr !important;
+  justify-items: start !important;
+}
+.process_step .description{
+  padding-bottom: 100%;
+}
+}
+@media (max-width: 615px) {
+   .hero {
+    grid-template-columns: 1fr;
+  }
+  .all_projects{
+  grid-template-columns: 1fr;
+  }
+  .hero-image {
+    grid-row: 1;
+    height: 150px;
+  }
+
+.project_description p.truncate-3-lines{
+  -webkit-line-clamp: 2;
+}
+
 
 }
 @media (max-width: 500px) {
@@ -823,7 +836,6 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
     font-size: 15px;
   }
   .member_cards {
-    padding-left: 1rem;
     grid-template-columns: 1fr;
   }
   .section_cta {
@@ -838,6 +850,9 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
 @media (max-width: 315px) {
   html {
     font-size: 14px;
+  }
+  .project_btns{
+    grid-template-columns: 1fr;
   }
 .hero-ctas{
   display: grid;
