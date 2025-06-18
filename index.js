@@ -8,7 +8,7 @@ toggleMenu.addEventListener("click", (e) => {
 
 const numValues = document.querySelectorAll(".value");
 
-const duration = 700
+const duration = 1500
 
 const observer2 = new IntersectionObserver(
   (entries) => {
@@ -42,17 +42,15 @@ numValues.forEach((num) => {
 const elementsToAnimate = document.querySelectorAll(`
   .hero-presentasion h1,
   .hero-presentasion p,
+  h2,
   .hero-ctas > *,
-  .about_container h2,
   .about_container .meeting_team h3,
   .about_container .purpose h3,
   .member_card,
-  .services h2,
   .services a,
   .service,
   .our_purpose p,
   .our_purpose h1,
-  .process h2,
   .process_step .description,
   .process_step .title
 `);

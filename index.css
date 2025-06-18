@@ -40,6 +40,17 @@ body {
   background-color: var(--main-bg);
 }
 
+h2{
+   text-align: center;
+  opacity: 0;
+  transform: translateY(-60%);
+  font-size: 2.625rem;
+}
+
+h2.animate{
+    animation: top-slide ease 0.7s both;
+}
+
 h1,
 h2,
 h3 {
@@ -67,12 +78,12 @@ body > * {
 header {
   overflow: visible;
   z-index: 1;
-  margin-top: 1.5rem;
+  margin: 0;
   position: fixed;
   top: 0;
   left: 50%;
-  border-radius: 8px;
-  box-shadow: 0px 2px 10px black;
+  border-radius: 4px;
+  box-shadow: 0px -2px 10px black;
   transform: translateX(-50%);
   width: 100%;
   background-color: var(--main-bg);
@@ -124,11 +135,11 @@ a {
   color: var(--main-bg);
   background-color: var(--primary-btn-bg);
 }
-.menu ul li:last-child a:hover {
+.menu ul li:last-child a:hover, .project_btns a:last-child:hover {
   color: var(--primary-btn-bg);
   background-color: var(--primary-btn-bg-hover);
 }
-.menu ul li a:hover {
+.menu ul li a:hover, .project_btns a:first-child:hover {
   transition: all 0.3s;
   color: var(--main-bg);
   background-color: white;
@@ -204,7 +215,7 @@ opacity: 0;
 .hero-ctas :first-child.animate {
   animation: fade-in 0.7s ease both;
 }
-.hero-ctas :first-child:hover, .section_cta a:hover {
+.hero-ctas :first-child:hover{
   transition: all 0.3s;
   color: var(--main-bg);
   background-color: white;
@@ -222,7 +233,7 @@ opacity: 0;
 }
 
 .hero-ctas :last-child:hover,
-.services a:hover {
+.services a:hover, .section_cta a:hover {
   color: var(--primary-btn-bg);
   background-color: var(--primary-btn-bg-hover);
 }
@@ -244,15 +255,7 @@ opacity: 0;
   margin: auto;
   padding: 6rem 0;
 }
-.about_container h2 {
-  text-align: center;
-  opacity: 0;
-  transform: translateY(-60%);
-  font-size: 2.625rem;
-}
-.about_container h2.animate {
-   animation: top-slide ease 0.7s both;
-}
+
 .about_container .meeting_team h3,
 .purpose h3 {
   transform: translateX(-80%);
@@ -297,8 +300,8 @@ opacity: 0;
 
 .member_info {
   gap: 0.5rem;
-  align-items: start;
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr;
 }
 .member_info .member_role {
   padding-top: 0.2rem;
@@ -391,15 +394,7 @@ opacity: 0;
 .sectionTitle{
   padding-top: 6rem;
 }
-.services h2 {
-  text-align: center;
-  opacity: 0;
-  transform: translateY(-60%);
-  font-size: 2.625rem;
-}
-.services h2.animate {
-  animation: top-slide ease-out 0.7s both;
-}
+
 .services svg {
   color: var(--primary-btn-bg);
 }
@@ -458,16 +453,6 @@ opacity: 0;
     align-items: center;
 }
 
-
-.process h2{
- text-align: center;
-  opacity: 0;
-  transform: translateY(-70%);
-  font-size: 2.625rem;
-}
-.process h2.animate {
-  animation: top-slide ease-out 0.7s both;
-}
 .title{
   padding:0 2.5rem;
   margin-top: -2.8rem;
@@ -618,16 +603,114 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77,
 .section_cta p{
   font-size: 1.2rem;
   padding-top: 1.2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 6rem;
 }
 .section_cta a{
-  background: var(--main-bg) ;
+  background: var(--primary-btn-bg);
+  color: var(--main-bg);
   border-radius: 8px;
   font-weight: bold;
   margin: auto;
   font-size: 1rem;
   padding: 10px 20px;
   width: max-content;
+}
+
+
+.all_projects{
+  margin-top: 5rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);}
+
+
+.project_container{
+  padding-bottom: 2rem;
+  border-radius: 16px;
+  box-shadow: 0px 0px 4px black;
+}
+
+.project_container > *{
+  padding: 0 1rem;
+}
+.project_container h3{
+  padding: 1rem;
+  font-size: 1.8rem;
+}
+
+.project_container ul{
+  display: flex;
+  flex-wrap: wrap;
+  
+  list-style-type: none;
+  border-radius: 16px;
+  
+  gap: 8px;
+  color: var(--primary-btn-bg);
+}
+.project_container ul li{
+  padding: 8px;
+  font-size: 0.8rem;
+  border-radius: 8px;
+  font-family: var(--paragraph-font);
+  background-color: #26243a;
+}
+
+.project_description{
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.project_container button{
+  opacity: 0.8;
+  color: var(--paragraph-color);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.project_container p{
+  font-size: 1rem;
+}
+.project_img{
+  
+  border-radius: 16px;
+box-shadow: 0px 0px 14px rgb(14, 7, 18);
+ height: 250px;
+}
+
+.project_services{
+  padding: 0.5rem 1rem;
+}
+
+.project_btns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.project_container a{
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+
+.project_btns a:first-child{
+  border: 1px solid white;
+}
+
+.project_btns a:last-child{
+  background-color: var(--primary-btn-bg);
+  color: #1c1b2d;
+
+}
+
+
+.project_img img{
+   border-radius: 16px;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 /* key frames */
@@ -658,9 +741,9 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77,
   }
 } */
 @media (max-width: 970px) {
-  html {
+  /* html {
     font-size: 14px;
-  }
+  } */
   .member_cards {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -677,6 +760,9 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77,
   }
 }
 @media (max-width: 800px) {
+  .section_cta{
+        padding: 6rem 1rem;
+  }
   .hero {
     grid-template-columns: 3fr 1fr;
   }
@@ -702,8 +788,14 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77,
     margin-left: 0;
   }
 }
-@media (max-width: 600px) {
-  
+@media (max-width: 615px) {
+   .hero {
+    grid-template-columns: 1fr;
+  }
+  .hero-image {
+    grid-row: 1;
+    height: 150px;
+  }
   .process_step > * {
   order: 0 !important;
 }
@@ -728,7 +820,7 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77,
 }
 @media (max-width: 500px) {
   html {
-    font-size: 12px;
+    font-size: 15px;
   }
   .member_cards {
     padding-left: 1rem;
@@ -742,18 +834,10 @@ background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(252, 211, 77,
     width: 100%;
   }
 }
-@media (max-width: 440px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-  .hero-image {
-    grid-row: 1;
-    height: 150px;
-  }
-}
+
 @media (max-width: 315px) {
   html {
-    font-size: 10px;
+    font-size: 14px;
   }
 .hero-ctas{
   display: grid;
