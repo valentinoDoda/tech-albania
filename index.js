@@ -44,6 +44,8 @@ const elementsToAnimate = document.querySelectorAll(`
   .hero-presentasion p,
   h2,
   .hero-ctas > *,
+  .project_container,
+  .section_cta,
   .about_container .meeting_team h3,
   .about_container .purpose h3,
   .member_card,
