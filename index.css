@@ -19,6 +19,9 @@
 html {
   scroll-behavior: smooth;
 }
+.menu a{
+  text-transform: capitalize;
+}
 svg{
   color: var(--primary-btn-bg);
 }
