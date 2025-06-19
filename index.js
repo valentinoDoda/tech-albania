@@ -83,3 +83,18 @@ viewMore.forEach((btn) => {
     btnParentElement.children[0].classList.toggle("truncate-3-lines");
   });
 });
+
+
+const contactForm  = document.getElementById("contact_form");
+const phone = "00355676457173";
+contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const userName = document.querySelector(".contact_form input:first-child").value;
+    const userEmail = document.querySelector(".contact_form input:nth-child(2)").value;
+    const userMessage = document.querySelector(".contact_form textarea").value;
+    const whatsUpMsg = `Emri i user-it : ${userName} \n Email-i: ${userEmail} \n Messazhi: ${userMessage}`;
+    const enCodeMsg = encodeURIComponent(whatsUpMsg);
+    const whatUpTaker = `https://wa.me/${phone}?text=${enCodeMsg}`
+    window.open(whatUpTaker, '_blank');
+    console.log(userName, userEmail, userMessage, enCodeMsg)
+})

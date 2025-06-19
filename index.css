@@ -761,6 +761,7 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
   
 }
 .social_media{
+  margin-top: 1rem ;
   justify-content: center;
   gap: 1rem;
   display: flex;
@@ -931,7 +932,7 @@ footer {
     grid-column: auto !important;
   }
   .contact .contact_left{
-    display: none;
+    order: 1;
   }
   .contact{
 
