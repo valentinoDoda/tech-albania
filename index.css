@@ -432,8 +432,9 @@ opacity: 0;
 .service {
   scale: 0.1;
   opacity: 0;
+  background-color: #272440;
   border-radius: 16px;
-  padding: 16px;
+  padding: 30px;
 }
 
 .service.animate {
@@ -913,6 +914,9 @@ footer {
   .purposes,
   .all_services {
     grid-template-columns: 1fr;
+  }
+  .all_services {
+    gap: 2rem;
   }
   .services a {
     grid-column: 1;
