@@ -13,8 +13,8 @@ const duration = 1500
 const observer2 = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
+      const endPoint = +entry.target.textContent;
       if (entry.isIntersecting) {
-        const endPoint = +entry.target.textContent;
         let startPoint = 0;
         const calcTime = duration / endPoint;
         const counter = setInterval(()=> {
