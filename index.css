@@ -720,12 +720,20 @@ box-shadow: 0px 0px 14px rgb(14, 7, 18);
 }
 
 .contact_right{
+  opacity: 0;
+  transform: translateX(70%);
   box-shadow: 0px 0px 10px;
     padding: 3rem;
     border-radius: 8px;
 }
 
+.contact_left.animate, .contact_right.animate{
+  animation: slide-in 0.7s ease both;
+}
+
 .contact_left{
+  opacity: 0;
+  transform: translateX(-70%);
   padding-bottom: 20px;
   border-radius: 8px;
   background-color: var(--primary-btn-bg-hover);

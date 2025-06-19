@@ -54,7 +54,9 @@ const elementsToAnimate = document.querySelectorAll(`
   .our_purpose p,
   .our_purpose h1,
   .process_step .description,
-  .process_step .title
+  .process_step .title,
+  .contact_left,
+  .contact_right
 `);
 
 const observer = new IntersectionObserver(
