@@ -86,7 +86,7 @@ viewMore.forEach((btn) => {
 
 
 const contactForm  = document.getElementById("contact_form");
-const phone = "00355676457173";
+const phone = "355676457173";
 contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const userName = document.querySelector(".contact_form input:first-child").value;
