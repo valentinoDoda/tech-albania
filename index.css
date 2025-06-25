@@ -378,15 +378,17 @@ opacity: 0;
   padding: 1rem;
 }
 
-.our_purpose h1 {
+.our_purpose h5 {
+  font-family: var(--heading-font);
+  color: white;
   scale: 0.1;
   opacity: 0;
   font-size: 3rem;
 }
-.our_purpose h1.animate {
+.our_purpose h5.animate {
   animation: fade-in ease 0.7s both;
 }
-.our_purpose h1 span {
+.our_purpose h5 span {
   color: var(--primary-btn-bg);
 }
 .our_purpose h2 {

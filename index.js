@@ -52,7 +52,7 @@ const elementsToAnimate = document.querySelectorAll(`
   .services a,
   .service,
   .our_purpose p,
-  .our_purpose h1,
+  .our_purpose h5,
   .process_step .description,
   .process_step .title,
   .contact_left,
